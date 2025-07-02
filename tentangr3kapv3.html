@@ -1,0 +1,52 @@
+<section style="font-family: 'Segoe UI', sans-serif; max-width: 700px; margin: auto; padding: 20px;">
+  <h1 style="color: #0078d7;">📊 R3kap V.3 – Sistem Rekap Otomatis Sekolah</h1>
+
+  <p><strong>R3kap V.3</strong> adalah sistem rekap data bulanan yang dikembangkan khusus untuk sekolah berbasis Google Sheets dan Apps Script. Dirancang oleh <strong>Operator Dapodik Sekolah</strong> dan <strong>Bro AI</strong>, sistem ini modular, otomatis, dan siap tampil di website sekolah.</p>
+
+  <h2>✨ Fitur Utama</h2>
+  <ul>
+    <li>🔄 Rekap otomatis setiap awal bulan (via Trigger)</li>
+    <li>📂 Pemilihan file manual melalui UI interaktif</li>
+    <li>👨‍🎓 Rekap peserta didik per kelas</li>
+    <li>🏫 Rekap rombongan belajar per tingkat</li>
+    <li>👨‍🏫 Rekap guru & pegawai berdasarkan kategori</li>
+    <li>🧾 Logging aktivitas ke sheet <code>LogRekap</code></li>
+    <li>📣 Notifikasi langsung via toast dan sel status</li>
+  </ul>
+
+  <h2>📁 Struktur Sistem</h2>
+  <p>Sistem ini terdiri dari modul modular berikut:</p>
+  <ul>
+    <li><strong>Engine</strong>: <code>rekapEngine.gs</code>, <code>rekapHelper.gs</code></li>
+    <li><strong>Trigger & UI</strong>: <code>trigger.gs</code>, <code>menu.gs</code>, <code>manualPicker.gs</code></li>
+    <li><strong>Utilitas</strong>: <code>fileFinder.gs</code>, <code>formatter.gs</code>, <code>driveUtil.gs</code>, <code>toastUtil.gs</code>, <code>sheetUtil.gs</code></li>
+    <li><strong>Modul Rekap</strong>: <code>pd.gs</code>, <code>rombel.gs</code>, <code>ptk.gs</code>, <code>outputUtil.gs</code>, <code>rekapUtil.gs</code></li>
+  </ul>
+
+  <h2>🖼️ Integrasi Website</h2>
+  <p>R3kap V.3 ditampilkan di website melalui iframe:</p>
+  <pre>&lt;iframe src="LINK-PUBHTML-SPREADSHEET" width="100%" height="600"&gt;&lt;/iframe&gt;</pre>
+  <p>Iframe ini menampilkan informasi publik seperti jumlah peserta didik, rombel, dan PTK berdasarkan data terkini.</p>
+
+  <h2>📌 Jadwal Eksekusi Otomatis</h2>
+  <ul>
+    <li>Tanggal: 1 setiap bulan</li>
+    <li>Waktu: 07:00 WIB</li>
+    <li>Fungsi: <code>jalankanRekapAwalBulan()</code> via Trigger</li>
+  </ul>
+
+  <h2>🤖 Pengembang Sistem</h2>
+  <p>
+    <strong>Bro Arhy</strong> — perancang sistem dan operator lapangan.<br>
+    <strong>Bro AI</strong> — asisten virtual, partner modularisasi dan dokumentasi.
+  </p>
+
+  <h2>📝 Catatan</h2>
+  <p>Sistem ini bersifat fleksibel dan dapat disesuaikan. Modul rekap dapat diaktifkan/di-nonaktifkan, ditambah sheet tambahan, atau diintegrasikan dengan sistem eksternal seperti Firebase atau webhook notifikasi.</p>
+
+  <hr style="margin-top: 40px;">
+  <p style="font-size: 12px; font-style: italic; color: #666;">
+    🛠️ Dokumentasi versi HTML ini adalah bagian dari R3kap V.3.  
+    Untuk pengembangan lanjutan, hubungi Operator Sekolah atau cek repo pengembang lokal.
+  </p>
+</section>

@@ -1,0 +1,46 @@
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      height: 100vh;
+      background: #f4f7fa;
+    }
+    aside {
+      width: 220px;
+      background-color: #005d92;
+      color: white;
+      padding: 20px;
+    }
+    aside h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    aside a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    aside a:hover {
+      text-decoration: underline;
+    }
+    main {
+      flex-grow: 1;
+      padding: 20px;
+      overflow: auto;
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #555;
+    }
