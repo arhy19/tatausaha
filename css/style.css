@@ -181,3 +181,43 @@ nav a {
     font-size: 1rem;
   }
 }
+
+/* HAMBURGER MENU */
+#menu-toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  display: none; /* default sembunyi untuk desktop */
+  margin-top: 10px;
+}
+
+#nav-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#nav-links.hidden {
+  display: none;
+}
+
+/* RESPONSIVE TOGGLE */
+@media screen and (max-width: 600px) {
+  #menu-toggle {
+    display: block;
+  }
+
+  #nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #nav-links a {
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+}
