@@ -1,10 +1,8 @@
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
 
-    toggleBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("hidden");
-    });
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("hidden");
   });
-</script>
+});
