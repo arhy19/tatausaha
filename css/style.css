@@ -145,3 +145,39 @@ nav a {
   padding: 2px;
   font-size: 1.1rem;
 }
+
+/* ========== RESPONSIVE - MOBILE LAYOUT ========== */
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr;
+    padding: 20px 10px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  nav {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  nav a {
+    display: block;
+    margin: 6px auto;
+    font-size: 1rem;
+  }
+}
