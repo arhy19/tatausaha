@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
   // ⏳ Muat semua partials
-  await loadPartial("header", "/partials/header.html");
-  await loadPartial("nav", "/partials/nav.html");
-  await loadPartial("footer", "/partials/footer.html");
+  await loadPartial("header", "partials/header.html");
+  await loadPartial("nav", "partials/nav.html");
+  await loadPartial("footer", "partials/footer.html");
 
   /**
    * 🧭 Toggle menu saat tombol hamburger diklik
