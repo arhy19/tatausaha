@@ -1,100 +1,89 @@
-/* ========== GLOBAL RESET ========== */
-body {
-  font-family: 'Segoe UI', sans-serif;
+/* ===== RESET & GLOBAL STYLING ===== */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #f4f6f8;
   color: #333;
 }
 
-/* ========== HEADER & FOOTER STYLING ========== */
-header,
-footer {
+/* ===== LAYOUT CONTAINER ===== */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HEADER ===== */
+header {
   background-color: #004080;
   color: white;
-  padding: 20px;
+  padding: 20px 0;
+}
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-/* ========== NAVIGATION (DESKTOP DEFAULT) ========== */
+/* ===== NAVIGATION ===== */
 nav {
-  margin-top: 10px;
-  position: relative;
+  background-color: #004080;
+  color: white;
+  padding: 10px 0;
+  width: 100%;
   text-align: center;
 }
-
 nav a {
   margin: 0 10px;
   text-decoration: none;
   color: white;
   font-weight: bold;
   user-select: none;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
-
-nav a:hover {
-  color: #0055aa;
-  text-decoration: underline;
-}
-
-nav a:active {
-  color: #ffcc00;
-}
-
+nav a:hover,
+nav a:active,
 nav a.active {
-  pointer-events: none;
   color: #ffcc00;
-  opacity: 0.8;
-  cursor: default;
 }
 
-/* ========== HAMBURGER MENU BUTTON (Only shown on mobile) ========== */
+/* 🔘 Hamburger button (hidden by default) */
 #menu-toggle {
-  background-color: transparent;
+  display: none;
+  background: transparent;
   border: none;
   font-size: 1.2rem;
   color: white;
-  cursor: pointer;
-  display: none; /* ditampilkan hanya saat mobile */
   margin-top: 10px;
+  cursor: pointer;
 }
 
-/* ========== NAVIGATION LINKS CONTAINER ========== */
+/* 🔗 Link container */
 #nav-links {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 10px;
-
-  /* untuk efek slide transition */
-  max-height: 1000px; /* default max-height desktop */
-  overflow: hidden;
-  transition: max-height 0.4s ease;
 }
-
-/* ========== TRANSISI SLIDE MENU MOBILE ========== */
 #nav-links.collapsed {
-  max-height: 0;
-}
-
-/* Versi fallback: menyembunyikan menu dengan display none */
-#nav-links.hidden {
   display: none;
 }
 
-/* ========== MENU SLIDE-IN (opsional tambahan dengan .menu/.active) ========== */
-.menu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+/* ===== MAIN CONTENT ===== */
+main {
+  flex: 1;
 }
 
-.menu.active {
-  max-height: 500px; /* sesuaikan dengan isi */
-}
-
-/* ========== HERO SECTION (Header konten utama) ========== */
+/* ===== HERO SECTION ===== */
 .hero {
   padding: 4rem 2rem;
   text-align: center;
@@ -104,13 +93,11 @@ nav a.active {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   animation: fadeIn 1.5s ease-in-out both;
 }
-
 .hero h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   animation: fadeInUp 1s ease-in-out;
 }
-
 .hero p {
   font-size: 1.15rem;
   line-height: 1.6;
@@ -119,7 +106,15 @@ nav a.active {
   animation: fadeInUp 1.5s ease-in-out;
 }
 
-/* ========== HERO ANIMATIONS ========== */
+/* ===== FOOTER ===== */
+footer {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -130,7 +125,6 @@ nav a.active {
     transform: translateY(0);
   }
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -140,7 +134,7 @@ nav a.active {
   }
 }
 
-/* ========== DATA GRID (Kontainer untuk daftar layanan/info) ========== */
+/* ===== CARD GRID ===== */
 .data-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -151,7 +145,7 @@ nav a.active {
   justify-items: center;
 }
 
-/* ========== CARD COMPONENTS ========== */
+/* ===== CARD COMPONENT ===== */
 .card {
   background-color: white;
   border-radius: 10px;
@@ -160,66 +154,83 @@ nav a.active {
   text-align: center;
   text-decoration: none;
   color: #333;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   transition: transform 0.2s ease;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
-
 .card:hover {
   transform: translateY(-5px);
 }
-
 .card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  display: block;
 }
-
 .card h3 {
   padding: 2px;
   font-size: 1.1rem;
 }
 
-/* ========== RESPONSIVE (Mobile Layout) ========== */
+/* ===== RESPONSIVE - MOBILE ===== */
 @media screen and (max-width: 600px) {
   .hero {
     padding: 2rem 1rem;
   }
-
   .hero h2 {
     font-size: 1.5rem;
   }
-
   .hero p {
     font-size: 1rem;
     margin-bottom: 1rem;
   }
-
   .data-grid {
     grid-template-columns: 1fr;
     padding: 20px 10px;
   }
-
   .card {
     max-width: 100%;
   }
 
+  /* Tampilkan tombol hamburger */
   #menu-toggle {
     display: block;
-    margin: 10px auto;
   }
 
+  /* Nav disembunyikan saat collapsed */
   #nav-links {
+    display: none;
     flex-direction: column;
     align-items: center;
-    max-height: 0; /* default tertutup */
+  }
+
+  /* Tampilkan saat tidak collapsed */
+  #nav-links:not(.collapsed) {
+    display: flex !important;
   }
 
   #nav-links a {
-    margin: 10px 0;
+    margin: 8px 0;
     font-size: 1rem;
+  }
+}
+
+/* ===== RESPONSIVE - DESKTOP ===== */
+@media screen and (min-width: 601px) {
+  #menu-toggle {
+    display: none;
+  }
+
+  #nav-links {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #nav-links a {
+    font-size: 1rem;
+    margin: 0 10px;
   }
 }
