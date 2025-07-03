@@ -3,6 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.getElementById("nav-links");
 
   toggleBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("hidden");
+    navLinks.classList.toggle("collapsed");
   });
 });
