@@ -192,9 +192,16 @@ nav a.active {
     flex-direction: column;
     align-items: center;
   }
-
   #nav-links a {
     margin: 8px 0;
     font-size: 1rem;
   }
+}
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.menu.active {
+  max-height: 500px; /* Atur sesuai isi menu */
 }
