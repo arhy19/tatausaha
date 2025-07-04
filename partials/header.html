@@ -1,5 +1,56 @@
-<!-- === HEADER SEKOLAH FLEXIBLE === -->
-<div class="header-flex">
-  <img src="assets/img/logo SMP2 small.png" alt="Logo Sekolah" class="logo-header" />
-  <h1 class="judul-header">PORTAL TATA USAHA</h1>
-</div>
+<!-- === HEADER NAVIGATION COMBO === -->
+<header style="border-bottom: 2px solid #ccc; padding: 10px 20px; font-family: sans-serif;">
+  <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between;">
+    
+    <!-- 📛 Logo + Judul -->
+    <div style="display: flex; align-items: center;">
+      <img src="assets/img/logo SMP2 small.png" alt="Logo Sekolah" style="width: 50px; height: auto; margin-right: 10px;" />
+      <h1 style="font-size: 1.5em; margin: 0;">PORTAL TATA USAHA</h1>
+    </div>
+
+    <!-- ☰ Menu Toggle (Checkbox Hack for Collapse) -->
+    <input type="checkbox" id="menu-toggle" style="display: none;" />
+    <label for="menu-toggle" style="display: none; cursor: pointer; font-size: 1.2em;" id="hamburger">☰ Menu</label>
+
+    <!-- 🔗 Navigation Links -->
+    <nav>
+      <ul style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; flex-wrap: wrap;" id="nav-links">
+        <li><a href="index.html">🏫 Beranda</a></li>
+        <li><a href="2.listpusatdata.html">🔡 Info Publik</a></li>
+        <li><a href="3.layanan.html">📋 Layanan</a></li>
+        <li><a href="4.dokumen.html">📂 Dokumen</a></li>
+        <li><a href="5.kontak.html">☎️ Kontak</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Inline Style for Mobile Collapse -->
+  <style>
+    @media (max-width: 600px) {
+      #hamburger {
+        display: block;
+      }
+
+      #nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      #menu-toggle:checked ~ nav > #nav-links {
+        display: flex;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #007BFF;
+    }
+  </style>
+</header>
