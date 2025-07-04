@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Tata Usaha</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Judul Halaman</title>
 </head>
 <body>
 
-  <!-- 🔄 Load header dan nav -->
-  <header id="header"></header>
-  <nav id="nav"></nav>
+  <!-- ✅ Tempat header ditampilkan -->
+  <div id="header-container"></div>
 
+  <!-- ✅ Script pemanggil header.html -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(error => console.error('Gagal memuat header:', error));
+  </script>
+
+</body>
+</html>
+ 
   <!-- 🧭 Konten utama -->
 <main>
     <section class="hero">
